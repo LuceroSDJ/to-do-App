@@ -34,13 +34,6 @@ const item3 = new Item ({
 
 const defaultItems = [item1, item2, item3];
 
-
-//global variables
-const itemsList = [];
-const workItems = [];
-//const means that as of now, we can push new items but we cannot assign a new array to the variable 
-
-
 app.get("/", function(req, res) {
     // const day = date.getDate();
 // ******************** READ *************************
@@ -89,14 +82,11 @@ app.post("/delete", function(req, res) {
     });
 });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 
-
-
-app.get("/work", function(req, res) {
-    res.render("list", {listTitle: "Work", newItems: workItems});
-});
-
-
-app.listen(3000, function() {
-    console.log("Server listening on port 3000");
+app.listen(port, function() {
+    console.log("Server has started!");
 });

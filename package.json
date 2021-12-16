@@ -11,6 +11,9 @@
   ],
   "author": "Carmen Lucero",
   "license": "ISC",
+  "engines": {
+    "node": "15.12.0"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
